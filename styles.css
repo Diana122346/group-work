@@ -1,80 +1,602 @@
+/* Загальні стилі */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
     margin: 0;
     padding: 0;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #5a4a42;
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
+/* Хедер */
+header {
+    background-color: #e0c9a6; /* Світлий бежевий */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Логотип */
+.logo img {
+    height: 50px; /* Висота логотипу */
+    width: auto;
+}
+
+/* Навігація */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #5a4a42; /* Темний бежевий */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #8b7355; /* Акцентний колір при наведенні */
+}
+
+/* Стилі для картинки входу */
+.login-image img {
+    width: 40px; /* Розмір картинки */
+    height: 40px;
+    border-radius: 50%; /* Зробити круглою */
+    transition: transform 0.3s ease; /* Анімація при наведенні */
+}
+
+.login-image img:hover {
+    transform: scale(1.1); /* Збільшення картинки при наведенні */
+}
+/* Герой-секція */
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Напівпрозорий білий фон */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #8b7355;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8b7355;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #6b5a4a;
+}
+
+/* Популярні рецепти */
+.popular-recipes {
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий білий фон */
+}
+
+.popular-recipes h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #8b7355;
+}
+
+.recipe-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.recipe-card {
+    background-color: white;
     padding: 20px;
-    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
     text-align: center;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
+.recipe-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #8b7355;
 }
 
-input {
+.recipe-card p {
+    font-size: 1rem;
+    color: #5a4a42;
+}
+
+/* Корисні поради */
+.tips {
+    padding: 40px 20px;
+    background-color: rgba(245, 245, 220, 0.9); /* Напівпрозорий бежевий фон */
+}
+
+.tips h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #8b7355;
+}
+
+.tips ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tips li {
+    font-size: 1.2rem;
     margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding-left: 20px;
+    position: relative;
 }
 
-button {
-    padding: 10px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.tips li::before {
+    content: "•";
+    color: #8b7355;
+    position: absolute;
+    left: 0;
 }
 
-button:hover {
-    background-color: #218838;
+/* Відгуки користувачів */
+.testimonials {
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий білий фон */
 }
 
-.categories {
+.testimonials h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #8b7355;
+}
+
+.testimonial-grid {
     display: flex;
     justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    color: #5a4a42;
+}
+
+.testimonial-card span {
+    font-size: 0.9rem;
+    color: #8b7355;
+    font-style: italic;
+}
+
+/* Футер */
+footer {
+    background-color: #e0c9a6;
+    padding: 15px 20px;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: #5a4a42;
+}
+
+/* Стилі для форми реєстрації */
+.registration {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий білий фон */
+    text-align: center;
+}
+
+.registration h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #8b7355;
+}
+
+.registration form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
     margin-bottom: 20px;
 }
 
-.categories button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #5a4a42;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #8b7355;
+    border-radius: 5px;
+    background-color: #f5f5dc; /* Пастельний бежевий */
+    color: #5a4a42;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #6b5a4a;
+    box-shadow: 0 0 5px rgba(107, 90, 74, 0.5);
+}
+
+.registration .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #8b7355;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.categories button:hover {
-    background-color: #0056b3;
+.registration .btn:hover {
+    background-color: #6b5a4a;
 }
 
-#recipe-display {
+.registration p {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #5a4a42;
+}
+
+.registration a {
+    color: #8b7355;
+    text-decoration: none;
+}
+
+.registration a:hover {
+    text-decoration: underline;
+}
+
+/* Стилі для форми входу */
+.login {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий білий фон */
+    text-align: center;
+}
+
+.login h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #8b7355;
+}
+
+.login form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.login .form-group {
+    margin-bottom: 20px;
+}
+
+.login .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #5a4a42;
+}
+
+.login .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #8b7355;
+    border-radius: 5px;
+    background-color: #f5f5dc; /* Пастельний бежевий */
+    color: #5a4a42;
+}
+
+.login .form-group input:focus {
+    outline: none;
+    border-color: #6b5a4a;
+    box-shadow: 0 0 5px rgba(107, 90, 74, 0.5);
+}
+
+.login .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #8b7355;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login .btn:hover {
+    background-color: #6b5a4a;
+}
+
+.login p {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #5a4a42;
+}
+
+.login a {
+    color: #8b7355;
+    text-decoration: none;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
+
+/* Стилі для сторінки нотаток */
+.notes {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий білий фон */
+    text-align: center;
+}
+
+.notes h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #8b7355;
+}
+
+.notes form {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: left;
+}
+
+.notes .form-group {
+    margin-bottom: 20px;
+}
+
+.notes .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #5a4a42;
+}
+
+.notes .form-group input,
+.notes .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #8b7355;
+    border-radius: 5px;
+    background-color: #f5f5dc; /* Пастельний бежевий */
+    color: #5a4a42;
+}
+
+.notes .form-group textarea {
+    resize: vertical; /* Дозволяє змінювати висоту текстового поля */
+}
+
+.notes .form-group input:focus,
+.notes .form-group textarea:focus {
+    outline: none;
+    border-color: #6b5a4a;
+    box-shadow: 0 0 5px rgba(107, 90, 74, 0.5);
+}
+
+.notes .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #8b7355;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.notes .btn:hover {
+    background-color: #6b5a4a;
+}
+
+/* Стилі для списку нотаток */
+.notes-list {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.note-card {
+    background-color: white;
     padding: 20px;
-    background-color: #f1f1f1;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-.recipe img {
-    max-width: 100%;
+.note-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #8b7355;
+}
+
+.note-card p {
+    font-size: 1rem;
+    color: #5a4a42;
+    margin-bottom: 15px;
+}
+
+.note-card button {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    background-color: #e0c9a6; /* Світлий бежевий */
+    color: #5a4a42;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.note-card button:hover {
+    background-color: #d2b48c; /* Темніший бежевий */
+}
+
+/* Стилі для сторінки блогу */
+.blog {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий білий фон */
+    text-align: center;
+}
+
+.blog h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #8b7355;
+}
+
+.blog p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #5a4a42;
+}
+
+.blog-form {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: left;
+}
+
+.blog-form .form-group {
+    margin-bottom: 20px;
+}
+
+.blog-form .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #5a4a42;
+}
+
+.blog-form .form-group input,
+.blog-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #8b7355;
+    border-radius: 5px;
+    background-color: #f5f5dc; /* Пастельний бежевий */
+    color: #5a4a42;
+}
+
+.blog-form .form-group textarea {
+    resize: vertical; /* Дозволяє змінювати висоту текстового поля */
+}
+
+.blog-form .form-group input:focus,
+.blog-form .form-group textarea:focus {
+    outline: none;
+    border-color: #6b5a4a;
+    box-shadow: 0 0 5px rgba(107, 90, 74, 0.5);
+}
+
+.blog-form .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #8b7355;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blog-form .btn:hover {
+    background-color: #6b5a4a;
+}
+
+/* Стилі для списку постів */
+.posts-list {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.post-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.post-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #8b7355;
+}
+
+.post-card p {
+    font-size: 1rem;
+    color: #5a4a42;
+    margin-bottom: 15px;
+}
+
+.post-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
