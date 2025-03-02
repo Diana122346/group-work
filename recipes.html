@@ -3,46 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рецепти</title>
+    <title>Рецепти страв</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Заголовок сторінки -->
     <header>
-        <div class="header-content">
-            <!-- Логотип -->
-            <div class="logo">
-                <img src="https://cdn-icons-png.freepik.com/256/5234/5234086.png?uid=R186596994&ga=GA1.1.346372246.1725123198&semt=ais_hybrid" alt="Логотип">
-            </div>
-
-            <!-- Навігація -->
-            <nav>
-                <a href="index.html">Головна</a>
-                <a href="recipes.html">Рецепти</a>
-                <a href="blog.html">Кулінарний блог</a>
-                <a href="notes.html">Нотатки</a>
-            </nav>
-
-            <!-- Картинка для входу -->
-            <div class="login-image">
-                <a href="login.html">
-                    <img src="https://cdn-icons-png.freepik.com/256/8255/8255918.png?uid=R186596994&ga=GA1.1.346372246.1725123198&semt=ais_hybrid" alt="Вхід">
-                </a>
-            </div>
-        </div>
+        <h1>Рецепти страв</h1>
+        <p>Смачні та прості рецепти для кожного дня</p>
     </header>
 
-    <div class="container">
-        <h1>Виберіть категорію страви</h1>
-        <div class="categories">
-            <button onclick="showRecipe('Сніданок')">Сніданок</button>
-            <button onclick="showRecipe('Обід')">Обід</button>
-            <button onclick="showRecipe('Вечеря')">Вечеря</button>
+    <!-- Секція з популярними рецептами -->
+    <section class="popular-recipes">
+        <h2>Популярні рецепти</h2>
+        <div class="recipe-grid" id="recipe-grid">
+            <!-- Картки рецептів будуть додані через JavaScript -->
         </div>
-        <div id="recipe-display">
-            <!-- Тут буде відображатися рецепт -->
-        </div>
-    </div>
+    </section>
 
-    <script src="scripts.js"></script>
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2023 Рецепти страв. Усі права захищені.</p>
+    </footer>
+
+    <script>
+        // Об'єкт з рецептами
+        const recipes = [
+            {
+                name: "Омлет з овочами",
+                image: "https://via.placeholder.com/300x200?text=Омлет+з+овочами", // Замінено на реальне посилання
+                description: "Смачний та поживний сніданок з яєць та свіжих овочів.",
+                ingredients: ["Яйця - 2 шт.", "Помідори - 1 шт.", "Цибуля - 1 шт.", "Сіль, перець за смаком"]
+            },
+            {
+                name: "Борщ",
+                image: "https://via.placeholder.com/300x200?text=Борщ", // Замінено на реальне посилання
+                description: "Традиційний український борщ з м'ясом та сметаною.",
+                ingredients: ["Буряк - 2 шт.", "Картопля - 3 шт.", "Капуста - 200 г", "М'ясо - 300 г", "Сметана за смаком"]
+            },
+            {
+                name: "Гречка з грибами",
+                image: "https://via.placeholder.com/300x200?text=Гречка+з+грибами", // Замінено на реальне посилання
+                description: "Ароматна гречка з підсмаженими грибами та цибулею.",
+                ingredients: ["Гречка - 1 склянка", "Гриби - 200 г", "Цибуля - 1 шт.", "Масло - 2 ст. л."]
+            },
+            {
+                name: "Сирники",
+                image: "https://via.placeholder.com/300x200?text=Сирники", // Замінено на реальне посилання
+                description: "Ніжні сирники зі сметаною та фруктовим соусом.",
+                ingredients: ["Сир - 500 г", "Борошно - 100 г", "Яйця - 2 шт.", "Цукор - 2 ст. л.", "Ванільний цукор за смаком"]
+            }
+        ];
+
+        // Функція для створення картки рецепту
+        function createRecipeCard(recipe) {
+            return `
+                <div class="recipe-card">
+                    <img src="${recipe.image}" alt="${recipe.name}">
+                    <h3>${recipe.name}</h3>
+                    <p>${recipe.description}</p>
+                    <button class="btn" onclick="showIngredients('${recipe.name}', ${JSON.stringify(recipe.ingredients)})">Детальніше</button>
+                </div>
+            `;
+        }
+
+        // Функція для відображення інгредієнтів
+        function showIngredients(name, ingredients) {
+            alert(`Інгредієнти для ${name}:\n\n${ingredients.join("\n")}`);
+        }
+
+        // Додаємо картки рецептів на сторінку
+        const recipeGrid = document.getElementById("recipe-grid");
+        if (recipeGrid) {
+            recipes.forEach(recipe => {
+                recipeGrid.innerHTML += createRecipeCard(recipe);
+            });
+        } else {
+            console.error("Елемент з id 'recipe-grid' не знайдено.");
+        }
+    </script>
+    
+    <!-- Скрипт для роботи з нотатками -->
+    <script src="notes.js"></script>
 </body>
 </html>
