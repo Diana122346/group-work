@@ -1,10 +1,8 @@
-// Отримуємо елемент для списку рецептів
 const recipesList = document.getElementById('recipes-list');
+const filterButtons = document.querySelectorAll('.filter-btn');
 
 // Масив для зберігання рецептів (завантажуємо з localStorage або створюємо новий)
 let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-
-// Якщо масив порожній, додаємо початкові рецепти
 
     recipes = [
         {
@@ -13,7 +11,7 @@ let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
             category: "soups",
             ingredients: "буряк, капуста, картопля, морква, цибуля, м'ясо, сметана",
             instructions: "Зваріть м'ясо, додайте овочі, доведіть до готовності. Подавайте зі сметаною.",
-            image: "https://www.themealdb.com/images/media/meals/1529446352.jpg", // Працююче посилання
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE68ADfGC4PZTHubj4VgP5uy9HDfpZ6jfyzg&s", // Працююче посилання
         },
         {
             id: 2,
@@ -21,7 +19,111 @@ let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
             category: "main-courses",
             ingredients: "тісто, фарш, цибуля, сметана",
             instructions: "Зліпіть пельмені, зваріть у підсоленій воді. Подавайте зі сметаною.",
-            image: "https://www.themealdb.com/images/media/meals/1529446630.jpg", // Працююче посилання
+            image: "https://myastoriya.com.ua/upload/iblock/4fc/4fcfbca6695cc1d2d75414812a08ac7b.jpg", // Працююче посилання
+        },
+        {
+            id: 3,
+            title: "Окрошка",
+            category: "soups",
+            ingredients: "квас, картопля, огірки, яйця, ковбаса, зелень, сметана",
+            instructions: "Всі інгредієнти наріжте кубиками, змішайте з квасом, додайте сметану.",
+            image: "https://static.insales-cdn.com/images/articles/1/7683/1129987/%D0%BE%D0%BA%D1%80%D0%BE%D1%88%D0%BA%D0%B0.jpg",
+        },
+        {
+            id: 4,
+            title: "Грибний суп",
+            category: "soups",
+            ingredients: "гриби, картопля, цибуля, морква, часник, бульйон",
+            instructions: "Гриби обсмажити з цибулею і морквою, додати бульйон і картоплю, варити до готовності.",
+            image: "https://static.espreso.tv/uploads/photobank/317000_318000/317309_above-view-delicious-food-on-tab_new_960x380_0.webp", // Працююче посилання
+        },
+        {
+            id: 5,
+            title: "Суп-пюре з броколі",
+            category: "soups",
+            ingredients: "броколі, картопля, цибуля, бульйон, сметана",
+            instructions: "Броколі і картоплю варити в бульйоні до м'якості, потім збити в пюре. Додати сметану перед подачею.",
+            image: "https://rud.ua/uploads/under_recipe/600%D1%85300-krem-sup-iz-brokoli_5fe47356c4d19.jpg", // Працююче посилання
+        },
+        {
+            id: 6,
+            title: "Курячий суп",
+            category: "soups",
+            ingredients: "курка, картопля, морква, цибуля, спеції",
+            instructions: "Зваріть курку, додайте картоплю і моркву, варіть до готовності. Посоліть і поперчіть за смаком.",
+            image: "https://static.nv.ua/shared/system/Article/posters/002/926/631/original/a0f5f39f25c5889e6cbcb911eccbee10.jpg?q=85&stamp=20240729084337", // Працююче посилання
+        },
+        {
+            id: 7,
+            title: "Шашлик з курки",
+            category: "main-courses",
+            ingredients: "куряче філе, спеції, олія, лимонний сік",
+            instructions: "Маринуйте курку у спеціях і олії, нанизуйте на шпажки і грилюйте до готовності.",
+            image: "https://img3.zakaz.ua/uploadf9621ba668c6cb8001aec6ba867d90c0.jpg.350x.jpg", // Працююче посилання
+        },
+        {
+            id: 8,
+            title: "Стейк із яловичини",
+            category: "main-courses",
+            ingredients: "яловичина, спеції, олія",
+            instructions: "Підсмажте стейк на гарячій сковороді з обох боків до бажаного ступеня готовності.",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJmRybRPYnejOnDsD_9f_ys2IsTXOD4NUAUQ&s", // Працююче посилання
+        },
+        {
+            id: 9,
+            title: "Лазанья",
+            category: "main-courses",
+            ingredients: "тісто для лазаньї, м'ясо, томатний соус, сир",
+            instructions: "Чергуйте шари тіста, м'яса і сиру, запікайте до золотистої скоринки.",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDELm9REwFYIimMlKFEdG1YFye_f6twTQuUA&s", // Працююче посилання
+        },
+        {
+            id: 10,
+            title: "Котлети по-київськи",
+            category: "main-courses",
+            ingredients: "куряче філе, масло, зелень, панірувальні сухарі",
+            instructions: "Формуємо котлети, обвалюємо в панірувальних сухарях і смажимо на сковороді.",
+            image: "https://rud.ua/uploads/under_recipe/02_600x300_5f686cb1bd6ca.jpg", // Працююче посилання
+        },
+        {
+            id: 11,
+            title: "Гречка з куркою",
+            category: "hot-dishes",
+            ingredients: "гречка, куряче філе, цибуля, морква, спеції",
+            instructions: "Обсмажте куряче філе з цибулею і морквою, додайте гречку та воду, варіть до готовності.",
+            image: "https://cdn.abo.media/upload/article/fauydtaagtuodf7pdazl.jpg",
+        },
+        {
+            id: 12,
+            title: "Плов з яловичиною",
+            category: "hot-dishes",
+            ingredients: "яловичина, рис, морква, цибуля, спеції",
+            instructions: "Обсмажте яловичину з овочами, додайте рис і воду, варіть до готовності.",
+            image: "https://i.obozrevatel.com/food/recipemain/2019/1/21/oamp.jpg?size=636x424",
+        },
+        {
+            id: 13,
+            title: "Тушковане м'ясо з картоплею",
+            category: "hot-dishes",
+            ingredients: "свинина, картопля, цибуля, морква, спеції",
+            instructions: "Обсмажте м'ясо з овочами, додайте картоплю та воду, тушкуйте до готовності.",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKRoMFofmpZ49gpKRec0Gw3t8R8U2lPVvT9g&s",
+        },
+        {
+            id: 14,
+            title: "Смажені кабачки з часниковим соусом",
+            category: "hot-dishes",
+            ingredients: "кабачки, часник, олія, спеції",
+            instructions: "Кабачки наріжте кружечками, обсмажте з часником і подавайте з соусом.",
+            image: "https://img.tsn.ua/cached/187/tsn-ef193642135c1378f91261f26d18fb96/thumbs/1200x630/95/9b/7a3ec8d3fb930c49a1459a42b6a79b95.jpeg",
+        },
+        {
+            id: 15,
+            title: "Запечені овочі з куркою",
+            category: "hot-dishes",
+            ingredients: "курка, картопля, морква, броколі, спеції",
+            instructions: "Овочі і курку запечіть у духовці при 180°C до готовності.",
+            image: "https://zaxid.net/resources/photos/news/500_DIR/202309/1571731_3015342.jpg?20230929162050",
         },
     ];
     saveRecipes(); // Зберігаємо початкові рецепти
@@ -33,10 +135,14 @@ function saveRecipes() {
 }
 
 // Функція для відображення рецептів
-function renderRecipes() {
+function renderRecipes(category = "all") {
     recipesList.innerHTML = ''; // Очищаємо список перед оновленням
 
-    recipes.forEach(recipe => {
+    const filteredRecipes = category === "all" 
+        ? recipes 
+        : recipes.filter(recipe => recipe.category === category);
+
+    filteredRecipes.forEach(recipe => {
         // Створюємо картку рецепту
         const recipeCard = document.createElement('div');
         recipeCard.className = 'recipe-card';
@@ -75,3 +181,55 @@ function renderRecipes() {
 
 // Відображаємо рецепти при завантаженні сторінки
 renderRecipes();
+
+// Додаємо обробники подій для фільтрації
+filterButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const category = e.target.getAttribute('data-category');
+        
+        // Додаємо або забираємо клас "active"
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+
+        // Рендеримо рецепти в залежності від обраної категорії
+        renderRecipes(category);
+    });
+});
+
+// Додаємо новий рецепт через форму
+const addRecipeForm = document.getElementById('add-recipe-form');
+addRecipeForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const title = document.getElementById('recipe-title').value;
+    const category = document.getElementById('recipe-category').value;
+    const ingredients = document.getElementById('recipe-ingredients').value;
+    const instructions = document.getElementById('recipe-instructions').value;
+    const image = document.getElementById('recipe-image').value;
+
+    const newRecipe = {
+        id: recipes.length + 1,
+        title,
+        category,
+        ingredients,
+        instructions,
+        image
+    };
+
+    recipes.push(newRecipe);
+    saveRecipes(); // Зберігаємо новий рецепт
+    renderRecipes(); // Оновлюємо відображення рецептів
+
+    // Закриваємо форму після додавання
+    document.getElementById('add-recipe-form-container').style.display = 'none';
+});
+
+// Закриваємо форму при натисканні на кнопку "Закрити"
+document.getElementById('close-form').addEventListener('click', () => {
+    document.getElementById('add-recipe-form-container').style.display = 'none';
+});
+
+// Показуємо форму для додавання рецепту при натисканні на кнопку "+"
+document.getElementById('add-recipe-icon').addEventListener('click', () => {
+    document.getElementById('add-recipe-form-container').style.display = 'block';
+});
