@@ -75,3 +75,79 @@ function renderRecipes() {
 
 // Відображаємо рецепти при завантаженні сторінки
 renderRecipes();
+
+// Дані рецептів
+const recipesData = [
+    {
+        title: "Тірамісу",
+        category: "desserts",
+        image: "https://example.com/dessert1.jpg",
+        description: "Класичний італійський десерт з кави та сиру маскарпоне.",
+    },
+    {
+        title: "Чізкейк",
+        category: "desserts",
+        image: "https://example.com/dessert2.jpg",
+        description: "Ніжний чізкейк з ягідним соусом.",
+    },
+    {
+        title: "Мохіто",
+        category: "drinks",
+        image: "https://example.com/drink1.jpg",
+        description: "Освіжаючий коктейль з м'ятою, лаймом та содою.",
+    },
+    {
+        title: "Кава по-італійськи",
+        category: "drinks",
+        image: "https://example.com/drink2.jpg",
+        description: "Ароматна кава з вершками.",
+    },
+    {
+        title: "Омлет",
+        category: "breakfast",
+        image: "https://example.com/breakfast1.jpg",
+        description: "Пушений омлет з зеленню та сиром.",
+    },
+    {
+        title: "Гранола",
+        category: "breakfast",
+        image: "https://example.com/breakfast2.jpg",
+        description: "Домашня гранола з медом та горіхами.",
+    },
+];
+
+// Функція для відображення рецептів
+function displayRecipes(category = "all") {
+    const recipesList = document.getElementById("recipes-list");
+    recipesList.innerHTML = ""; // Очистити список
+
+    const filteredRecipes = category === "all"
+        ? recipesData
+        : recipesData.filter(recipe => recipe.category === category);
+
+    filteredRecipes.forEach(recipe => {
+        const recipeCard = document.createElement("div");
+        recipeCard.classList.add("recipe-card");
+
+        recipeCard.innerHTML = `
+            <img src="${recipe.image}" alt="${recipe.title}">
+            <h3>${recipe.title}</h3>
+            <p>${recipe.description}</p>
+        `;
+        recipesList.appendChild(recipeCard);
+    });
+}
+
+// Фільтрація рецептів за категорією
+document.querySelectorAll(".filter-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const category = button.getAttribute("data-category");
+        displayRecipes(category);
+    });
+});
+
+// Початкове відображення всіх рецептів
+displayRecipes();
