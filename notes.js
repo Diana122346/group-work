@@ -2,8 +2,8 @@
 const noteForm = document.getElementById('note-form');
 const notesList = document.getElementById('notes-list');
 
-// Масив для зберігання нотаток
-let notes = [];
+// Масив для зберігання нотаток (завантажуємо з localStorage або створюємо новий)
+let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
 // Функція для додавання нотатки
 function addNote(title, content) {
@@ -13,12 +13,19 @@ function addNote(title, content) {
         content,
     };
     notes.push(note); // Додаємо нотатку до масиву
+    saveNotes(); // Зберігаємо нотатки в localStorage
     renderNotes(); // Оновлюємо список нотаток
+}
+
+// Функція для збереження нотаток у localStorage
+function saveNotes() {
+    localStorage.setItem('notes', JSON.stringify(notes));
 }
 
 // Функція для видалення нотатки
 function deleteNote(id) {
     notes = notes.filter(note => note.id !== id); // Видаляємо нотатку з масиву
+    saveNotes(); // Оновлюємо localStorage
     renderNotes(); // Оновлюємо список нотаток
 }
 
@@ -51,3 +58,6 @@ noteForm.addEventListener('submit', (e) => {
     // Очищаємо поля форми
     noteForm.reset();
 });
+
+// Відображаємо нотатки при завантаженні сторінки
+renderNotes();
