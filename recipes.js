@@ -27,7 +27,7 @@ let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
             category: "soups",
             ingredients: "квас, картопля, огірки, яйця, ковбаса, зелень, сметана",
             instructions: "Всі інгредієнти наріжте кубиками, змішайте з квасом, додайте сметану.",
-            image: "https://static.insales-cdn.com/images/articles/1/7683/1129987/%D0%BE%D0%BA%D1%80%D0%BE%D1%88%D0%BA%D0%B0.jpg",
+            image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/%D0%9E%D0%BA%D1%80%D0%BE%D1%88%D0%BA%D0%B0_Okroshka_05.jpg",
         },
         {
             id: 4,
