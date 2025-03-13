@@ -60,6 +60,7 @@ let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
             ingredients: "куряче філе, спеції, олія, лимонний сік",
             instructions: "Маринуйте курку у спеціях і олії, нанизуйте на шпажки і грилюйте до готовності.",
             image: "https://img3.zakaz.ua/uploadf9621ba668c6cb8001aec6ba867d90c0.jpg.350x.jpg", 
+        },
         {
             id: 8,
             title: "Стейк із яловичини",
