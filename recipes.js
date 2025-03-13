@@ -51,7 +51,7 @@ let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
             category: "soups",
             ingredients: "курка, картопля, морква, цибуля, спеції",
             instructions: "Зваріть курку, додайте картоплю і моркву, варіть до готовності. Посоліть і поперчіть за смаком.",
-            image: "https://static.nv.ua/shared/system/Article/posters/002/926/631/original/a0f5f39f25c5889e6cbcb911eccbee10.jpg?q=85&stamp=20240729084337", // Працююче посилання
+            image: "https://static.nv.ua/shared/system/Article/posters/002/926/631/original/a0f5f39f25c5889e6cbcb911eccbee10.jpg?q=85&stamp=20240729084337", 
         },
         {
             id: 7,
@@ -59,15 +59,14 @@ let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
             category: "main-courses",
             ingredients: "куряче філе, спеції, олія, лимонний сік",
             instructions: "Маринуйте курку у спеціях і олії, нанизуйте на шпажки і грилюйте до готовності.",
-            image: "https://img3.zakaz.ua/uploadf9621ba668c6cb8001aec6ba867d90c0.jpg.350x.jpg", // Працююче посилання
-        },
+            image: "https://img3.zakaz.ua/uploadf9621ba668c6cb8001aec6ba867d90c0.jpg.350x.jpg", 
         {
             id: 8,
             title: "Стейк із яловичини",
             category: "main-courses",
             ingredients: "яловичина, спеції, олія",
             instructions: "Підсмажте стейк на гарячій сковороді з обох боків до бажаного ступеня готовності.",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJmRybRPYnejOnDsD_9f_ys2IsTXOD4NUAUQ&s", // Працююче посилання
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJmRybRPYnejOnDsD_9f_ys2IsTXOD4NUAUQ&s", 
         },
         {
             id: 9,
@@ -75,7 +74,7 @@ let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
             category: "main-courses",
             ingredients: "тісто для лазаньї, м'ясо, томатний соус, сир",
             instructions: "Чергуйте шари тіста, м'яса і сиру, запікайте до золотистої скоринки.",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDELm9REwFYIimMlKFEdG1YFye_f6twTQuUA&s", // Працююче посилання
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDELm9REwFYIimMlKFEdG1YFye_f6twTQuUA&s",
         },
         {
             id: 10,
@@ -83,7 +82,7 @@ let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
             category: "main-courses",
             ingredients: "куряче філе, масло, зелень, панірувальні сухарі",
             instructions: "Формуємо котлети, обвалюємо в панірувальних сухарях і смажимо на сковороді.",
-            image: "https://rud.ua/uploads/under_recipe/02_600x300_5f686cb1bd6ca.jpg", // Працююче посилання
+            image: "https://rud.ua/uploads/under_recipe/02_600x300_5f686cb1bd6ca.jpg",
         },
         {
             id: 11,
@@ -122,7 +121,7 @@ let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
             title: "Запечені овочі з куркою",
             category: "hot-dishes",
             ingredients: "курка, картопля, морква, броколі, спеції",
-            instructions: "Овочі і курку запечіть у духовці при 180°C до готовності.",
+            instructions: "Овочі та курку запечіть у духовці при 180°C до готовності.",
             image: "https://zaxid.net/resources/photos/news/500_DIR/202309/1571731_3015342.jpg?20230929162050",
         },
     ];
