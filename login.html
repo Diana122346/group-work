@@ -36,7 +36,7 @@
         <section class="login">
             <div class="container">
                 <h2>Увійти</h2>
-                <form action="#" method="post">
+                <form onsubmit="redirectToHome(event)">
                     <div class="form-group">
                         <label for="email">Електронна пошта:</label>
                         <input type="email" id="email" name="email" required>
@@ -56,5 +56,6 @@
     <footer>
         <p>&copy; 2023 Кулінарні рецепти. Усі права захищені.</p>
     </footer>
+    <script src="login.js"></script>
 </body>
 </html>
