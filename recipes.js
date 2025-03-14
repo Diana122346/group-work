@@ -126,40 +126,52 @@ let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
             image: "https://zaxid.net/resources/photos/news/500_DIR/202309/1571731_3015342.jpg?20230929162050",
         },
         {
-            title: "Тірамісу",
-            category: "desserts",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Classic_Italian_Tiramisu-3_%2829989504485%29.jpg/640px-Classic_Italian_Tiramisu-3_%2829989504485%29.jpg",
-            description: "Класичний італійський десерт з кави та сиру маскарпоне.",
+            "title": "Тірамісу",
+            "category": "desserts",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Classic_Italian_Tiramisu-3_%2829989504485%29.jpg/640px-Classic_Italian_Tiramisu-3_%2829989504485%29.jpg",
+            "description": "Класичний італійський десерт з кави та сиру маскарпоне.",
+            "ingredients": "сир маскарпоне, кава еспресо, яйця, цукор, печиво савоярді, какао",
+            "instructions": "Збийте маскарпоне з жовтками і цукром, змочіть савоярді в каві, викладіть шарами та охолодіть."
         },
         {
-        title: "Чізкейк",
-        category: "desserts",
-        image: "https://klopotenko.com/wp-content/uploads/2023/03/cheesecake-new-york_sitewebukr-img-1000x600.jpg?v=1720545631",
-        description: "Ніжний чізкейк з ягідним соусом.",
+            "title": "Чізкейк",
+            "category": "desserts",
+            "image": "https://klopotenko.com/wp-content/uploads/2023/03/cheesecake-new-york_sitewebukr-img-1000x600.jpg?v=1720545631",
+            "description": "Ніжний чізкейк з ягідним соусом.",
+            "ingredients": "сир вершковий, печиво, вершкове масло, яйця, цукор, ваніль, ягідний соус",
+            "instructions": "Подрібніть печиво, змішайте з маслом і утрамбуйте основу. Збийте сир з яйцями і цукром, випікайте при 160°C."
         },
         {
-            title: "Мохіто",
-            category: "drinks",
-            image: "https://img.freepik.com/free-photo/tasty-caipirinha-cocktail-with-mint_23-2149451506.jpg?uid=R186596994&ga=GA1.1.346372246.1725123198&semt=ais_hybrid",
-            description: "Освіжаючий коктейль з м'ятою, лаймом та содою.",
+            "title": "Мохіто",
+            "category": "drinks",
+            "image": "https://img.freepik.com/free-photo/tasty-caipirinha-cocktail-with-mint_23-2149451506.jpg?uid=R186596994&ga=GA1.1.346372246.1725123198&semt=ais_hybrid",
+            "description": "Освіжаючий коктейль з м'ятою, лаймом та содою.",
+            "ingredients": "лайм, м'ята, цукор, газована вода, лід, ром (опціонально)",
+            "instructions": "Розімніть лайм і м'яту з цукром, додайте лід і газовану воду. Перемішайте."
         },
         {
-            title: "Кава по-італійськи",
-            category: "drinks",
-            image: "https://img.freepik.com/free-photo/front-view-cup-tea-with-cookies-macarons-blue-surface-cake-bisciut-sugar-pie-sweet_140725-66721.jpg?uid=R186596994&ga=GA1.1.346372246.1725123198&semt=ais_hybrid",
-            description: "Ароматна кава з вершками.",
+            "title": "Кава по-італійськи",
+            "category": "drinks",
+            "image": "https://img.freepik.com/free-photo/front-view-cup-tea-with-cookies-macarons-blue-surface-cake-bisciut-sugar-pie-sweet_140725-66721.jpg?uid=R186596994&ga=GA1.1.346372246.1725123198&semt=ais_hybrid",
+            "description": "Ароматна кава з вершками.",
+            "ingredients": "мелена кава, вода, вершки, цукор",
+            "instructions": "Зваріть каву в турці або кавоварці, додайте вершки та цукор за смаком."
         },
         {
-            title: "Омлет",
-            category: "breakfast",
-            image: "https://klopotenko.com/wp-content/uploads/2018/03/yaichnica-omlet_siteWeb.jpg",
-            description: "Пушений омлет з зеленню та сиром.",
+            "title": "Омлет",
+            "category": "breakfast",
+            "image": "https://klopotenko.com/wp-content/uploads/2018/03/yaichnica-omlet_siteWeb.jpg",
+            "description": "Пушений омлет з зеленню та сиром.",
+            "ingredients": "яйця, молоко, сир, зелень, сіль, перець, олія",
+            "instructions": "Збийте яйця з молоком, додайте сир і зелень. Обсмажте на сковороді до готовності."
         },
         {
-            title: "Гранола",
-            category: "breakfast",
-            image: "https://klopotenko.com/wp-content/uploads/2017/11/Granola_siteWebUkr.jpg",
-            description: "Домашня гранола з медом та горіхами.",
+            "title": "Гранола",
+            "category": "breakfast",
+            "image": "https://klopotenko.com/wp-content/uploads/2017/11/Granola_siteWebUkr.jpg",
+            "description": "Домашня гранола з медом та горіхами.",
+            "ingredients": "вівсяні пластівці, горіхи, мед, сухофрукти, кориця",
+            "instructions": "Змішайте всі інгредієнти, запікайте при 160°C 20 хвилин, періодично помішуючи."
         },
 
     ];
