@@ -81,37 +81,37 @@ const recipesData = [
     {
         title: "Тірамісу",
         category: "desserts",
-        image: "https://example.com/dessert1.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Classic_Italian_Tiramisu-3_%2829989504485%29.jpg/640px-Classic_Italian_Tiramisu-3_%2829989504485%29.jpg",
         description: "Класичний італійський десерт з кави та сиру маскарпоне.",
     },
     {
         title: "Чізкейк",
         category: "desserts",
-        image: "https://example.com/dessert2.jpg",
+        image: "https://klopotenko.com/wp-content/uploads/2023/03/cheesecake-new-york_sitewebukr-img-1000x600.jpg?v=1720545631",
         description: "Ніжний чізкейк з ягідним соусом.",
     },
     {
         title: "Мохіто",
         category: "drinks",
-        image: "https://example.com/drink1.jpg",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa4hExiYtupfKNxXeCh1e-nT4sbkCBaVgscA&s",
         description: "Освіжаючий коктейль з м'ятою, лаймом та содою.",
     },
     {
         title: "Кава по-італійськи",
         category: "drinks",
-        image: "https://example.com/drink2.jpg",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyyOKzOfFZP9Uqj79Q64GI9IrINXnDGAkPRA&s",
         description: "Ароматна кава з вершками.",
     },
     {
         title: "Омлет",
         category: "breakfast",
-        image: "https://example.com/breakfast1.jpg",
+        image: "https://klopotenko.com/wp-content/uploads/2018/03/yaichnica-omlet_siteWeb.jpg",
         description: "Пушений омлет з зеленню та сиром.",
     },
     {
         title: "Гранола",
         category: "breakfast",
-        image: "https://example.com/breakfast2.jpg",
+        image: "https://klopotenko.com/wp-content/uploads/2017/11/Granola_siteWebUkr.jpg",
         description: "Домашня гранола з медом та горіхами.",
     },
 ];
