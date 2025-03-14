@@ -36,7 +36,7 @@
         <section class="registration">
             <div class="container">
                 <h2>Реєстрація</h2>
-                <form action="#" method="post">
+                <form onsubmit="redirectToHome(event)">
                     <div class="form-group">
                         <label for="name">Ім'я:</label>
                         <input type="text" id="name" name="name" required>
@@ -49,7 +49,7 @@
                         <label for="password">Пароль:</label>
                         <input type="password" id="password" name="password" required>
                     </div>
-                    <div class="form-group">
+                <div class="form-group">
                         <label for="confirm-password">Підтвердіть пароль:</label>
                         <input type="password" id="confirm-password" name="confirm-password" required>
                     </div>
